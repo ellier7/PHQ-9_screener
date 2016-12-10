@@ -4,7 +4,7 @@ import AnswerList from './AnswerList'
 
 const Questionnaire = React.createClass({
   render() {
-  	console.log("PROPSS", this.props)
+  	console.log(">>>PROPSS", this.props)
     return (
       <div>
         {this.props.questionnaire.map((questions, i) => 
@@ -13,8 +13,8 @@ const Questionnaire = React.createClass({
         	key={i} 
         	i={i} 
         	questions={questions.question} 
-        	/>,
-        	<AnswerList />
+          score={questions.score}
+        	/>
         	)}
       </div>
     )

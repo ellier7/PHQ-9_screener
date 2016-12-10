@@ -1,7 +1,9 @@
 // increment
-export function increment(index) {
+export function increment(index, score) {
+	console.log("INCREMENTTTT")
   return {
-    type: 'INCREMENT_LIKES',
-    index
+    type: 'INCREMENT_SCORE',
+    index,
+    score
   }
 }

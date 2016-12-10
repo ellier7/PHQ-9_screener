@@ -8,7 +8,6 @@ const Main = React.createClass({
         <h1>
          Questionaire
         </h1>
-        {console.log("PROPSSSSSSSSSSS", this.props)}
         {React.cloneElement({...this.props}.children, {...this.props})}
       </div>
     )
