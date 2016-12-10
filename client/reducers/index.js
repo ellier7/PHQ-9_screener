@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import questions from './questions';
+import questionnaire from './questions';
+import answers from './answers'
 
-const rootReducer = combineReducers({questions, routing: routerReducer });
+const rootReducer = combineReducers({
+	questionnaire,
+	answers,
+	routing: routerReducer 
+});
 
 export default rootReducer;

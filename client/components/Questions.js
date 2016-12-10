@@ -1,15 +1,30 @@
 import React from 'react';
-import Questionaire from './Questionaire';
+import Answers from './Answers'
 
 const Questions = React.createClass({
   render() {
-  	console.log("PROPS", this.props)
+    console.log("HAYYYY")
+    const { questions, i, answers} = this.props;
     return (
-      <div className="photo-grid">
-        {this.props.questions.map((questions, i) => <Questionaire {...this.props} key={i} i={i} questions={questions} />)}
-      </div>
+      <div>
+          <p>{questions}</p>
+        </div>
     )
   }
 });
 
 export default Questions;
+
+
+        /* <li>
+            <span>Not at all</span>
+        </li>
+        <li>
+            <span>Several days</span>
+        </li>
+        <li>
+             <span>More than half the days</span>
+        </li>
+        <li>
+            <span>Nearly every day</span>
+        </li> */

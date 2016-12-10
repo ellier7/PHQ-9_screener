@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "001cf1f5b4b8037d7193"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "097ab70528b07883e4de"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -1745,20 +1745,25 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _Questions = __webpack_require__(430);
+	var _Questionnaire = __webpack_require__(430);
 	
-	var _Questions2 = _interopRequireDefault(_Questions);
+	var _Questionnaire2 = _interopRequireDefault(_Questionnaire);
+	
+	var _AnswerList = __webpack_require__(433);
+	
+	var _AnswerList2 = _interopRequireDefault(_AnswerList);
 	
 	var _reactRouter = __webpack_require__(369);
 	
 	var _reactRedux = __webpack_require__(211);
 	
-	var _store = __webpack_require__(432);
+	var _store = __webpack_require__(434);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// Import Components
 	var router = _react2.default.createElement(
 	  _reactRedux.Provider,
 	  { store: _store2.default },
@@ -1768,7 +1773,7 @@
 	    _react2.default.createElement(
 	      _reactRouter.Route,
 	      { path: '/', component: _App2.default },
-	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Questions2.default })
+	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Questionnaire2.default })
 	    )
 	  )
 	);
@@ -1776,10 +1781,7 @@
 	// import react router deps
 	
 	
-	// Import Components
-	
-	
-	(0, _reactDom.render)(router, document.getElementById('root'));
+	(0, _reactDom.render)(router, document.getElementById('app'));
 
 /***/ },
 /* 13 */
@@ -23216,8 +23218,8 @@
 	
 	function mapStateToProps(state) {
 	  return {
-	    questions: state.questions,
-	    comments: state.comments
+	    questionnaire: state.questionnaire,
+	    answers: state.answers
 	  };
 	}
 	
@@ -25016,14 +25018,14 @@
 	};
 	
 	var _reactTransformHmr2 = (0, _reactTransformHmr4.default)({
-	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/quartet/client/components/Main.js',
+	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/Main.js',
 	  components: _components,
 	  locals: [module],
 	  imports: [_react3.default]
 	});
 	
 	var _reactTransformCatchErrors2 = (0, _reactTransformCatchErrors4.default)({
-	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/quartet/client/components/Main.js',
+	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/Main.js',
 	  components: _components,
 	  locals: [],
 	  imports: [_react3.default, _redboxReact3.default]
@@ -25046,6 +25048,7 @@
 	        null,
 	        'Questionaire'
 	      ),
+	      console.log("PROPSSSSSSSSSSS", this.props),
 	      _react3.default.cloneElement(_extends({}, this.props).children, _extends({}, this.props))
 	    );
 	  }
@@ -37039,9 +37042,13 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _Questionaire = __webpack_require__(431);
+	var _Questions = __webpack_require__(431);
 	
-	var _Questionaire2 = _interopRequireDefault(_Questionaire);
+	var _Questions2 = _interopRequireDefault(_Questions);
+	
+	var _AnswerList = __webpack_require__(433);
+	
+	var _AnswerList2 = _interopRequireDefault(_AnswerList);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -37050,14 +37057,14 @@
 	};
 	
 	var _reactTransformHmr2 = (0, _reactTransformHmr4.default)({
-	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/quartet/client/components/Questions.js',
+	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/Questionnaire.js',
 	  components: _components,
 	  locals: [module],
 	  imports: [_react3.default]
 	});
 	
 	var _reactTransformCatchErrors2 = (0, _reactTransformCatchErrors4.default)({
-	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/quartet/client/components/Questions.js',
+	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/Questionnaire.js',
 	  components: _components,
 	  locals: [],
 	  imports: [_react3.default, _redboxReact3.default]
@@ -37069,30 +37076,34 @@
 	  };
 	}
 	
-	var Questions = _wrapComponent('_component')(_react3.default.createClass({
-	  displayName: 'Questions',
+	var Questionnaire = _wrapComponent('_component')(_react3.default.createClass({
+	  displayName: 'Questionnaire',
 	  render: function render() {
 	    var _this = this;
 	
-	    console.log("PROPS", this.props);
+	    console.log("PROPSS", this.props);
 	    return _react3.default.createElement(
 	      'div',
-	      { className: 'photo-grid' },
-	      this.props.questions.map(function (questions, i) {
-	        return _react3.default.createElement(_Questionaire2.default, _extends({}, _this.props, { key: i, i: i, questions: questions }));
-	      })
+	      null,
+	      this.props.questionnaire.map(function (questions, i) {
+	        return _react3.default.createElement(_Questions2.default, _extends({}, _this.props, {
+	          key: i,
+	          i: i,
+	          questions: questions.question
+	        }));
+	      }, _react3.default.createElement(_AnswerList2.default, null))
 	    );
 	  }
 	}));
 	
-	exports.default = Questions;
+	exports.default = Questionnaire;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
 
 /***/ },
 /* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {"use strict";
+	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -37114,6 +37125,10 @@
 	
 	var _reactTransformHmr4 = _interopRequireDefault(_reactTransformHmr3);
 	
+	var _Answers = __webpack_require__(432);
+	
+	var _Answers2 = _interopRequireDefault(_Answers);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var _components = {
@@ -37121,14 +37136,14 @@
 	};
 	
 	var _reactTransformHmr2 = (0, _reactTransformHmr4.default)({
-	    filename: "/Users/ellie/Documents/Job Applications/Coding Challenges/quartet/client/components/Questionaire.js",
+	    filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/Questions.js',
 	    components: _components,
 	    locals: [module],
 	    imports: [_react3.default]
 	});
 	
 	var _reactTransformCatchErrors2 = (0, _reactTransformCatchErrors4.default)({
-	    filename: "/Users/ellie/Documents/Job Applications/Coding Challenges/quartet/client/components/Questionaire.js",
+	    filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/Questions.js',
 	    components: _components,
 	    locals: [],
 	    imports: [_react3.default, _redboxReact3.default]
@@ -37140,67 +37155,200 @@
 	    };
 	}
 	
-	var Questionaire = _wrapComponent("_component")(_react3.default.createClass({
-	    displayName: "Questionaire",
+	var Questions = _wrapComponent('_component')(_react3.default.createClass({
+	    displayName: 'Questions',
 	    render: function render() {
-	        console.log("<<<<<PPROPSS", this.props);
+	        console.log("HAYYYY");
 	        var _props = this.props,
 	            questions = _props.questions,
-	            i = _props.i;
+	            i = _props.i,
+	            answers = _props.answers;
 	
 	        return _react3.default.createElement(
-	            "div",
+	            'div',
 	            null,
 	            _react3.default.createElement(
-	                "p",
+	                'p',
 	                null,
-	                questions.question
-	            ),
-	            _react3.default.createElement(
-	                "li",
-	                null,
-	                _react3.default.createElement(
-	                    "span",
-	                    null,
-	                    "Not at all"
-	                )
-	            ),
-	            _react3.default.createElement(
-	                "li",
-	                null,
-	                _react3.default.createElement(
-	                    "span",
-	                    null,
-	                    "Several days"
-	                )
-	            ),
-	            _react3.default.createElement(
-	                "li",
-	                null,
-	                _react3.default.createElement(
-	                    "span",
-	                    null,
-	                    "More than half the days"
-	                )
-	            ),
-	            _react3.default.createElement(
-	                "li",
-	                null,
-	                _react3.default.createElement(
-	                    "span",
-	                    null,
-	                    "Nearly every day"
-	                )
+	                questions
 	            )
 	        );
 	    }
 	}));
 	
-	exports.default = Questionaire;
+	exports.default = Questions;
+	
+	/* <li>
+	    <span>Not at all</span>
+	</li>
+	<li>
+	    <span>Several days</span>
+	</li>
+	<li>
+	     <span>More than half the days</span>
+	</li>
+	<li>
+	    <span>Nearly every day</span>
+	</li> */
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
 
 /***/ },
 /* 432 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _redboxReact2 = __webpack_require__(222);
+	
+	var _redboxReact3 = _interopRequireDefault(_redboxReact2);
+	
+	var _reactTransformCatchErrors3 = __webpack_require__(227);
+	
+	var _reactTransformCatchErrors4 = _interopRequireDefault(_reactTransformCatchErrors3);
+	
+	var _react2 = __webpack_require__(13);
+	
+	var _react3 = _interopRequireDefault(_react2);
+	
+	var _reactTransformHmr3 = __webpack_require__(228);
+	
+	var _reactTransformHmr4 = _interopRequireDefault(_reactTransformHmr3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var _components = {
+	  _component: {}
+	};
+	
+	var _reactTransformHmr2 = (0, _reactTransformHmr4.default)({
+	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/Answers.js',
+	  components: _components,
+	  locals: [module],
+	  imports: [_react3.default]
+	});
+	
+	var _reactTransformCatchErrors2 = (0, _reactTransformCatchErrors4.default)({
+	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/Answers.js',
+	  components: _components,
+	  locals: [],
+	  imports: [_react3.default, _redboxReact3.default]
+	});
+	
+	function _wrapComponent(id) {
+	  return function (Component) {
+	    return _reactTransformHmr2(_reactTransformCatchErrors2(Component, id), id);
+	  };
+	}
+	
+	var Answers = _wrapComponent('_component')(_react3.default.createClass({
+	  displayName: 'Answers',
+	  render: function render() {
+	    var _props = this.props,
+	        answer = _props.answer,
+	        i = _props.i;
+	
+	    return _react3.default.createElement(
+	      'div',
+	      null,
+	      _react3.default.createElement(
+	        'p',
+	        null,
+	        answer
+	      )
+	    );
+	  }
+	}));
+	
+	exports.default = Answers;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
+
+/***/ },
+/* 433 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _redboxReact2 = __webpack_require__(222);
+	
+	var _redboxReact3 = _interopRequireDefault(_redboxReact2);
+	
+	var _reactTransformCatchErrors3 = __webpack_require__(227);
+	
+	var _reactTransformCatchErrors4 = _interopRequireDefault(_reactTransformCatchErrors3);
+	
+	var _react2 = __webpack_require__(13);
+	
+	var _react3 = _interopRequireDefault(_react2);
+	
+	var _reactTransformHmr3 = __webpack_require__(228);
+	
+	var _reactTransformHmr4 = _interopRequireDefault(_reactTransformHmr3);
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _Answers = __webpack_require__(432);
+	
+	var _Answers2 = _interopRequireDefault(_Answers);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var _components = {
+	  _component: {}
+	};
+	
+	var _reactTransformHmr2 = (0, _reactTransformHmr4.default)({
+	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/AnswerList.js',
+	  components: _components,
+	  locals: [module],
+	  imports: [_react3.default]
+	});
+	
+	var _reactTransformCatchErrors2 = (0, _reactTransformCatchErrors4.default)({
+	  filename: '/Users/ellie/Documents/Job Applications/Coding Challenges/PHQ-9_screener/client/components/AnswerList.js',
+	  components: _components,
+	  locals: [],
+	  imports: [_react3.default, _redboxReact3.default]
+	});
+	
+	function _wrapComponent(id) {
+	  return function (Component) {
+	    return _reactTransformHmr2(_reactTransformCatchErrors2(Component, id), id);
+	  };
+	}
+	
+	var AnswerList = _wrapComponent('_component')(_react3.default.createClass({
+	  displayName: 'AnswerList',
+	  render: function render() {
+	    var _this = this;
+	
+	    console.log("ANSWERMAP", this.props.answers);
+	    return _react3.default.createElement(
+	      'div',
+	      { className: 'photo-grid' },
+	      this.props.answers.map(function (answers, i) {
+	        return _react3.default.createElement(_Answers2.default, _extends({}, _this.props, {
+	          key: i,
+	          i: i,
+	          answer: answers.text
+	        }));
+	      })
+	    );
+	  }
+	}));
+	
+	exports.default = AnswerList;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
+
+/***/ },
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37212,27 +37360,32 @@
 	
 	var _redux = __webpack_require__(191);
 	
-	var _reactRouterRedux = __webpack_require__(433);
+	var _reactRouterRedux = __webpack_require__(435);
 	
 	var _reactRouter = __webpack_require__(369);
 	
-	var _index = __webpack_require__(438);
+	var _index = __webpack_require__(440);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	var _questions = __webpack_require__(440);
+	var _questionnaire = __webpack_require__(443);
 	
-	var _questions2 = _interopRequireDefault(_questions);
+	var _questionnaire2 = _interopRequireDefault(_questionnaire);
+	
+	var _answers = __webpack_require__(444);
+	
+	var _answers2 = _interopRequireDefault(_answers);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// create an object for the default data
-	
+	var defaultState = {
+	  questionnaire: _questionnaire2.default,
+	  answers: _answers2.default
+	};
 	
 	// import the root reducer
-	var defaultState = {
-	  questions: _questions2.default
-	};
+	
 	
 	var store = (0, _redux.createStore)(_index2.default, defaultState);
 	
@@ -37241,7 +37394,7 @@
 	exports.default = store;
 
 /***/ },
-/* 433 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37251,7 +37404,7 @@
 	});
 	exports.routerMiddleware = exports.routerActions = exports.goForward = exports.goBack = exports.go = exports.replace = exports.push = exports.CALL_HISTORY_METHOD = exports.routerReducer = exports.LOCATION_CHANGE = exports.syncHistoryWithStore = undefined;
 	
-	var _reducer = __webpack_require__(434);
+	var _reducer = __webpack_require__(436);
 	
 	Object.defineProperty(exports, 'LOCATION_CHANGE', {
 	  enumerable: true,
@@ -37266,7 +37419,7 @@
 	  }
 	});
 	
-	var _actions = __webpack_require__(435);
+	var _actions = __webpack_require__(437);
 	
 	Object.defineProperty(exports, 'CALL_HISTORY_METHOD', {
 	  enumerable: true,
@@ -37311,11 +37464,11 @@
 	  }
 	});
 	
-	var _sync = __webpack_require__(436);
+	var _sync = __webpack_require__(438);
 	
 	var _sync2 = _interopRequireDefault(_sync);
 	
-	var _middleware = __webpack_require__(437);
+	var _middleware = __webpack_require__(439);
 	
 	var _middleware2 = _interopRequireDefault(_middleware);
 	
@@ -37325,7 +37478,7 @@
 	exports.routerMiddleware = _middleware2['default'];
 
 /***/ },
-/* 434 */
+/* 436 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -37368,7 +37521,7 @@
 	}
 
 /***/ },
-/* 435 */
+/* 437 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -37410,7 +37563,7 @@
 	var routerActions = exports.routerActions = { push: push, replace: replace, go: go, goBack: goBack, goForward: goForward };
 
 /***/ },
-/* 436 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37423,7 +37576,7 @@
 	
 	exports['default'] = syncHistoryWithStore;
 	
-	var _reducer = __webpack_require__(434);
+	var _reducer = __webpack_require__(436);
 	
 	var defaultSelectLocationState = function defaultSelectLocationState(state) {
 	  return state.routing;
@@ -37568,7 +37721,7 @@
 	}
 
 /***/ },
-/* 437 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37578,7 +37731,7 @@
 	});
 	exports['default'] = routerMiddleware;
 	
-	var _actions = __webpack_require__(435);
+	var _actions = __webpack_require__(437);
 	
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 	
@@ -37606,31 +37759,39 @@
 	}
 
 /***/ },
-/* 438 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 	
 	var _redux = __webpack_require__(191);
 	
-	var _reactRouterRedux = __webpack_require__(433);
+	var _reactRouterRedux = __webpack_require__(435);
 	
-	var _questions = __webpack_require__(439);
+	var _questions = __webpack_require__(441);
 	
 	var _questions2 = _interopRequireDefault(_questions);
 	
+	var _answers = __webpack_require__(442);
+	
+	var _answers2 = _interopRequireDefault(_answers);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var rootReducer = (0, _redux.combineReducers)({ questions: _questions2.default, routing: _reactRouterRedux.routerReducer });
+	var rootReducer = (0, _redux.combineReducers)({
+		questionnaire: _questions2.default,
+		answers: _answers2.default,
+		routing: _reactRouterRedux.routerReducer
+	});
 	
 	exports.default = rootReducer;
 
 /***/ },
-/* 439 */
+/* 441 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -37657,11 +37818,10 @@
 	// export default posts;
 	
 	
-	function questions() {
+	function questionnaire() {
 	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 	  var action = arguments[1];
 	
-	  console.log("STATE", state);
 	  switch (action.type) {
 	    case 'INCREMENT_LIKES':
 	      console.log("Incrementing Likes!!");
@@ -37673,10 +37833,27 @@
 	  }
 	}
 	
-	exports.default = questions;
+	exports.default = questionnaire;
+	
+	// export const questionAnswers = (state, { type, answerId, questionId }) => {
+	//     console.log("initial STATE", initialState)
+	//   switch(type) {
+	//     case types.SELECT_ANSWER:
+	//       return Object.assign({}, state, { [questionId]: answerId })
+	//     default:
+	//       return state
+	//   }
+	// }
+	
+	// const questionnaire = (state = initialState, action) => {
+	//       // console.log("QUESTIONAIRE ANSWERS", state.questionAnswers)
+	//   return Object.assign({}, state, {
+	//     questionAnswers: questionAnswers(state.questionAnswers, action)
+	//   })
+	// }
 
 /***/ },
-/* 440 */
+/* 442 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -37684,36 +37861,91 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var questions = [{
+	function answers() {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'GET ANSWERS':
+	      console.log("Incrementing Likes!!");
+	      var i = action.index;
+	      console.log(">>>I", i);
+	      return state;
+	    default:
+	      return state;
+	  }
+	}
+	
+	exports.default = answers;
+
+/***/ },
+/* 443 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var questionnaire = [{
 	  "question": "Little interest or pleasure in doing things?",
-	  "score": 0
+	  "id": 0
 	}, {
 	  "question": "Feeling down, depressed, or hopeless?",
-	  "score": 0
+	  "id": 1
 	}, {
 	  "question": "Trouble falling or staying asleep, or sleeping too much?",
-	  "score": 0
+	  "id": 2
 	}, {
 	  "question": "Feeling tired or having little energy?",
-	  "score": 0
+	  "id": 3
 	}, {
 	  "question": "Poor appetite or overeating?",
-	  "score": 0
+	  "id": 4
 	}, {
 	  "question": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down?",
-	  "score": 0
+	  "id": 5
 	}, {
 	  "question": "Trouble concentrating on things, such as reading the newspaper or watching television?",
-	  "score": 0
+	  "id": 6
 	}, {
 	  "question": "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?",
-	  "score": 0
+	  "id": 7
 	}, {
 	  "question": "Thoughts that you would be better off dead, or of hurting yourself in some way?",
-	  "score": 0
+	  "id": 8
 	}];
 	
-	exports.default = questions;
+	exports.default = questionnaire;
+
+/***/ },
+/* 444 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var answers = [{
+	  "text": 'Not at all',
+	  "id": 0,
+	  "score": 0
+	}, {
+	  "text": 'Several days',
+	  "id": 1,
+	  "score": 1
+	}, {
+	  "text": 'More than half the days',
+	  "id": 2,
+	  "score": 2
+	}, {
+	  "text": 'Nearly every day',
+	  "id": 3,
+	  "score": 3
+	}];
+	
+	exports.default = answers;
 
 /***/ }
 /******/ ]);

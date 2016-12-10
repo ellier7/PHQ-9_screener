@@ -17,8 +17,7 @@
 // export default posts;
 
 
-function questions(state = [], action) {
-  console.log("STATE", state)
+function questionnaire(state = [], action) {
   switch(action.type) {
     case 'INCREMENT_LIKES' :
       console.log("Incrementing Likes!!");
@@ -30,4 +29,22 @@ function questions(state = [], action) {
   }
 }
 
-export default questions;
+export default questionnaire;
+
+
+// export const questionAnswers = (state, { type, answerId, questionId }) => {
+//     console.log("initial STATE", initialState)
+//   switch(type) {
+//     case types.SELECT_ANSWER:
+//       return Object.assign({}, state, { [questionId]: answerId })
+//     default:
+//       return state
+//   }
+// }
+
+// const questionnaire = (state = initialState, action) => {
+//       // console.log("QUESTIONAIRE ANSWERS", state.questionAnswers)
+//   return Object.assign({}, state, {
+//     questionAnswers: questionAnswers(state.questionAnswers, action)
+//   })
+// }

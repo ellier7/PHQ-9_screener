@@ -5,11 +5,13 @@ import { browserHistory } from 'react-router';
 // import the root reducer
 import rootReducer from './reducers/index';
 
-import questions from './data/questions';
+import questionnaire from './data/questionnaire';
+import answers from './data/answers'
 
 // create an object for the default data
 const defaultState = {
-  questions
+  questionnaire,
+  answers
 };
 
 const store = createStore(rootReducer, defaultState);

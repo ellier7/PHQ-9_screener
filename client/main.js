@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 
 // Import Components
 import App from './components/App';
-import Questions from './components/Questions';
+import Questionnaire from './components/Questionnaire';
+import AnswerList from './components/AnswerList'
 
 // import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -15,10 +16,10 @@ const router = (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={Questions}></IndexRoute>
+        <IndexRoute component={Questionnaire}></IndexRoute>
       </Route>
     </Router>
   </Provider>
 )
 
-render(router, document.getElementById('root'));
+render(router, document.getElementById('app'));
