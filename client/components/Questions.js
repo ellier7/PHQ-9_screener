@@ -1,13 +1,51 @@
 import React from 'react';
-import Answers from './Answers'
+import AnswerList from './AnswerList'
 
 const Questions = React.createClass({
+    renderAnswers: function (question) {
+  //   <div style={styles.answerContainer}>
+  //     {this.props.answers.map((answer, index) => (
+  //       <RaisedButton
+  //         key={index}
+  //         label={answer}
+  //         primary={true}
+  //         onTouchTap={() => this.addAnswer(question, answer, index)}
+  //         style={styles.answerButton}
+  //       />
+  //     ))}
+  //   </div>
+
+
+   <div>
+   // {console.log("QUESTION", question)}
+        {this.props.answers.map((answers, i) => 
+          <Answers 
+          {...this.props} 
+          key={i} 
+          i={i} 
+          answer={answers.text} 
+          />
+          )}
+      </div>
+  },
   render() {
+    // {console.log(">>>>>PROPSSSS", this.props)}
     const { questions, i, score} = this.props;
+        // {console.log("question", i)}
     return (
-      <div>
+      <div style={{marginLeft: '10%'}}>
           <p>{questions}</p>
-          <ul>
+        <AnswerList {...this.props} />
+        </div>
+    )
+  }
+});
+
+export default Questions;
+
+           {/*{this.renderAnswers()}
+          
+        } <ul>
             <li
           onClick={this.props.increment.bind(this, 0, i)}
           span={score === 0 ? 'incremented':null}>
@@ -29,12 +67,6 @@ const Questions = React.createClass({
             <span>Nearly every day</span>
             </li>
 
-               </ul>
-        </div>
-    )
-  }
-});
-
-export default Questions;
+               </ul> */}
 
 

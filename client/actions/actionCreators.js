@@ -1,8 +1,12 @@
 // increment
-export function increment(index, score) {
+export function increment(question, index, score) {
 	console.log("INCREMENTTTT")
+	console.log("QUESTION", question)
+	console.log("INDEX FROM ACTIOn", index)
+	console.log("SCORE", score)
   return {
-    type: 'INCREMENT_SCORE',
+    type: 'GET_ANSWERS',
+    question,
     index,
     score
   }
