@@ -8,7 +8,8 @@ function mapStateToProps(state) {
     questionnaire: state.questionnaire,
     answers: state.answers,
     results: state.results,
-    depressionSeverity: state.depressionSeverity
+    depressionSeverity: state.depressionSeverity,
+    therapists: state.therapists
   }
 }
 

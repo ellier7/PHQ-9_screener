@@ -8,7 +8,7 @@ const Submit = React.createClass({
     const score = Object.values(results).reduce((x,y) => x+y)
     return (
       <div>
-      <h1>Your score is: {score}</h1>
+      <h1>Your scored a {score} out of 27</h1>
       {this.props.depressionSeverity.map((range, i) =>
         <DepressionSeverity 
         {...this.props}
