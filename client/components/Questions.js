@@ -1,37 +1,11 @@
 import React from 'react';
 import AnswerList from './AnswerList'
+import Submit from './Submit'
 
 const Questions = React.createClass({
-    renderAnswers: function (question) {
-  //   <div style={styles.answerContainer}>
-  //     {this.props.answers.map((answer, index) => (
-  //       <RaisedButton
-  //         key={index}
-  //         label={answer}
-  //         primary={true}
-  //         onTouchTap={() => this.addAnswer(question, answer, index)}
-  //         style={styles.answerButton}
-  //       />
-  //     ))}
-  //   </div>
-
-
-   <div>
-   // {console.log("QUESTION", question)}
-        {this.props.answers.map((answers, i) => 
-          <Answers 
-          {...this.props} 
-          key={i} 
-          i={i} 
-          answer={answers.text} 
-          />
-          )}
-      </div>
-  },
   render() {
     // {console.log(">>>>>PROPSSSS", this.props)}
     const { questions, i, score} = this.props;
-        // {console.log("question", i)}
     return (
       <div style={{marginLeft: '10%'}}>
           <p>{questions}</p>

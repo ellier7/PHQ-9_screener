@@ -1,25 +1,34 @@
 import React from 'react';
 import { ButtonGroup, Button } from 'react-bootstrap';
+import Submit from './Submit'
 
 const Answers = React.createClass({
 	onItemClick: function (event) {
-    event.currentTarget.style.backgroundColor = 'mediumaquamarine';
-},
+		event.currentTarget.style.backgroundColor = 'mediumaquamarine';
+	},
   render() {
-    const { answer, index, questions, i} = this.props;
-    // {console.log("INDEX", index)}
+    const { answer, index, questions, i, results} = this.props;
+    // {console.log("RESULTS", results)}
     return (
-        <ButtonGroup>
-    <Button
-    onClick={this.props.increment.bind(this, i, index, 0)}>{answer}</Button>
-  </ButtonGroup>
+    // const score = Object.keys(results).reduce((memo, key) => memo + results[key].value, 0);
+    <div>
+          <ul>
+          <li
+          onClick={this.props.increment.bind(this, questions, i, index)}
+          >{answer}</li></ul></div>
     )
   }
 });
 
 export default Answers;
 
-    {/* <div>
+      {/*  <ButtonGroup>
+    <Button
+    onClick={this.props.increment.bind(this, questions, i, index)}>{answer}
+    </Button>
+  </ButtonGroup>
+    	{results[i]}
+     <div>
           <ul>
           <li
           onClick={this.props.increment.bind(this, 0, i)}

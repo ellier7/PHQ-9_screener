@@ -1,13 +1,13 @@
 // increment
-export function increment(question, index, score) {
+export function increment(question, index, value) {
 	console.log("INCREMENTTTT")
-	console.log("QUESTION", question)
-	console.log("INDEX FROM ACTIOn", index)
-	console.log("SCORE", score)
   return {
     type: 'GET_ANSWERS',
-    question,
-    index,
-    score
+   question, 
+	index, 
+	value 
   }
 }
+
+
+// increment

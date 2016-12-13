@@ -1,14 +1,18 @@
-export default (state=[], action) => {
+function results(state = [], action) {
+
+    const { question, index, value } = action;
   switch (action.type) {
   case 'GET_ANSWERS':
-      console.log("Incrementing Likes!!");
-      // const index = action.index
-           return state.map((question, index) => {
-      	 return Object.assign({}, question, {
-            score: action.score
-          })
-  })
-       default:
+   // return {
+   //      ...state,
+   //      [index]: value
+   //    };
+   return Object.assign({}, state, { [index]: value })
+    default:
       return state;
   }
+
 }
+
+export default results;
+

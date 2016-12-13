@@ -1,20 +1,32 @@
 function questionnaire(state = [], action) {
 	// console.log("ACTIONINDEX", action.index)
-  switch(action.type) {
-    case 'INCREMENT_SCORE':
-          const { question, index, score } = action;
-          console.log("QUESTION", question)
-  console.log("INDEX", index)
-  console.log("SCORE", score)
-      return state.map((question, index) => {
-        Object.assign({}, question, {
-        	index: index,
-            score: score
-          })
-      })
+  // switch (action.type) {
+  // case 'GET_ANSWERS':
+  //     // console.log("STATE", state);
+  //     const index = action.index
+  //          return state.map((question, index) => {
+  //          	console.log("QUESTION", question)
+  //          	// console.log("INDEX", index)
+
+  //          	// const score = Object.keys(results).reduce((memo, key) => memo + results[key].value, 0);
+  //     	 return Object.assign({}, question, {
+  //     	 	score: action.score
+  //     	 })
+  // })
+  //      default:
+  //     return state;
+  // // const { question, index, score } = action;
+  // //  return {
+  // //       ...state,
+  // //       // [question]: { index, value }
+  // //     };
+  // //   default:
+  // //     return state;
+  // }
+  switch (action.type) {
     default:
       return state;
-  }  
+  }
 }
 
 export default questionnaire;

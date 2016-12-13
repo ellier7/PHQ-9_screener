@@ -8,10 +8,13 @@ import rootReducer from './reducers/index';
 import questionnaire from './data/questionnaire';
 import answers from './data/answers'
 
+var results = {}
+
 // create an object for the default data
 const defaultState = {
   questionnaire,
-  answers
+  answers,
+  results
 };
 
 const store = createStore(rootReducer, defaultState);
