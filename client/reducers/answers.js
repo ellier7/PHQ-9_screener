@@ -1,6 +1,5 @@
 function answers(state = [], action) {
   switch(action.type) {
-  	case "JAJA":
     default:
       return state;
   }

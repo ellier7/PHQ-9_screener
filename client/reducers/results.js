@@ -1,6 +1,5 @@
 function results(state = [], action) {
-
-    const { question, index, value } = action;
+  const { question, index, value, selectedAnswer } = action;
   switch (action.type) {
   case 'GET_ANSWERS':
    // return {

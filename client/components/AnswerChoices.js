@@ -12,6 +12,8 @@ const AnswerList = React.createClass({
         	key={i} 
           index={i}
         	answer={answers.text} 
+          answerID={answers.id}
+          selectedAnswer={i}
           >
           
           </Answers>

@@ -7,22 +7,29 @@ const Answers = React.createClass({
 		event.currentTarget.style.backgroundColor = 'mediumaquamarine';
 	},
   render() {
-    const { answer, index, questions, i, results} = this.props;
-    // {console.log("RESULTS", results)}
+    const { answer, index, questions, i, results, answerID, selectedAnswer} = this.props;
     return (
+       <div>
+    <Button bsSize="large" block
+    onClick={this.props.increment.bind(this, questions, i, index, answerID)}>{answer}</Button>
+  </div>
     // const score = Object.keys(results).reduce((memo, key) => memo + results[key].value, 0);
-    <div>
-          <ul>
-          <li
-          onClick={this.props.increment.bind(this, questions, i, index)}
-          >{answer}</li></ul></div>
     )
   }
 });
 
 export default Answers;
 
+
+
+
       {/*  <ButtonGroup>
+         <ButtonGroup>
+         <Button
+          onClick={this.props.increment.bind(this, questions, i, index, answerID)}>{answer}</Button>
+  </ButtonGroup>
+
+
     <Button
     onClick={this.props.increment.bind(this, questions, i, index)}>{answer}
     </Button>

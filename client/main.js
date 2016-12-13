@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 // Import Components
 import App from './components/App';
 import Questionnaire from './components/Questionnaire';
-import AnswerList from './components/AnswerList'
+import AnswerChoices from './components/AnswerChoices'
 import Submit from './components/Submit'
 
 // import react router deps

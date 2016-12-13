@@ -1,5 +1,5 @@
 import React from 'react';
-import AnswerList from './AnswerList'
+import AnswerChoices from './AnswerChoices'
 import Submit from './Submit'
 
 const Questions = React.createClass({
@@ -8,8 +8,8 @@ const Questions = React.createClass({
     const { questions, i, score} = this.props;
     return (
       <div style={{marginLeft: '10%'}}>
-          <p>{questions}</p>
-        <AnswerList {...this.props} />
+          <center><h3>{questions}</h3></center>
+        <AnswerChoices {...this.props} />
         </div>
     )
   }

@@ -11,7 +11,7 @@ const Questionnaire = React.createClass({
     browserHistory.push('/results')
   },
   render() {
-  	// console.log(">>>RESULTS", this.props.results)
+  	// console.log(">>>PROPS", this.props)
     return (
       <div>
         {this.props.questionnaire.map((questions, i) => 

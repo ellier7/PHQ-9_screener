@@ -7,7 +7,8 @@ function mapStateToProps(state) {
   return {
     questionnaire: state.questionnaire,
     answers: state.answers,
-    results: state.results
+    results: state.results,
+    depressionSeverity: state.depressionSeverity
   }
 }
 
