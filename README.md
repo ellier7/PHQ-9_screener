@@ -14,7 +14,7 @@ From within the root directory:
 
 ```sh
 git clone https://github.com/ellier7/PHQ-9_screener.git
-`cd PHQ-9_screener
+`cd PHQ-9_screener`
 npm install
 npm run build
 npm run start
