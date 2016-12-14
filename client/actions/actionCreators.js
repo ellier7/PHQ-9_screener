@@ -1,9 +1,9 @@
 // increment
-export function increment(question, index, value) {
+export function increment(question, questionIndex, answerValue) {
   return {
     type: 'GET_ANSWERS',
     question, 
-	index, 
-	value
+	questionIndex, 
+	answerValue
   }
 }
