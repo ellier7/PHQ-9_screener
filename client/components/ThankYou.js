@@ -1,14 +1,13 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React from 'react'
 
 const ThankYou = React.createClass({
   render() {
     return (
-         <div className="thanks">
-         Thank you for taking the survey!
-  </div>
-    )
-  }
-});
+    	<div className="thanks">
+    		Thank you for taking the survey!
+    	</div>
+    	)
+	}
+})
 
-export default ThankYou;
+export default ThankYou
