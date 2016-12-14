@@ -23,7 +23,7 @@ const Questionnaire = React.createClass({
         <Questions 
         	{...this.props} 
         	key={i} 
-          questionIndex={i} 
+            questionIndex={i} 
         	questions={questions.question}
           />
           )}
