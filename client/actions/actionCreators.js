@@ -1,14 +1,9 @@
 // increment
-export function increment(question, index, value, selectedAnswer) {
-	console.log("INCREMENTTTT")
-	console.log("QUESTIONS", selectedAnswer)
+export function increment(question, index, value) {
   return {
     type: 'GET_ANSWERS',
-   question, 
+    question, 
 	index, 
 	value
   }
 }
-
-
-// increment

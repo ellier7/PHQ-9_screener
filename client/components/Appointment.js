@@ -2,11 +2,10 @@ import React from 'react';
 
 const Appointment = React.createClass({
   render() {
-  	console.log("THIS PROPS", this.props)
     return (
          <div className="schedule">
          A representative will call you to schedule an appointment. <br/> Thank you for taking the survey! 
-  </div>
+         </div>
     )
   }
 });

@@ -12,5 +12,3 @@ const Main = React.createClass({
 });
 
 export default Main;
-
- // style={{...css.h1}}>
