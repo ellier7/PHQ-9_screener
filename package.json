@@ -4,7 +4,7 @@
   "description": "PHQ-9 depression screener and assessment score along with its explanation",
   "main": "server/server.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "build": "webpack --watch",
     "dev": "webpack -w",
     "webpack": "webpack --progress --colors --watch"
