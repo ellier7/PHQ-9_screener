@@ -1,35 +1,35 @@
-var path = require('path');
 var webpack = require('webpack');
+var path = require('path');
 
-module.exports = {
-  devtool: 'source-map',
+var BUILD_DIR = path.resolve(__dirname, 'client/public/');
+var APP_DIR = path.resolve(__dirname, 'client');
+
+var config = {
   entry: [
-    'webpack-hot-middleware/client',
-    './client/main'
+    APP_DIR + '/main.js'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    path: BUILD_DIR,
+    filename: 'bundle.js'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ],
+  debug: true,
   module: {
     loaders: [
-    // js
-    {
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'client')
-    },
-    // CSS
-    { 
-      test: /\.styl$/, 
-      include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader!stylus-loader'
-    }
-    ]
-  }
+     {
+       test: /\.js$/,
+       loader: 'babel-loader',
+       include: path.join(__dirname, 'client'),
+       query: {
+         presets: ['es2015', 'react']
+       }
+     },
+     {
+       test: /\.css?$/,
+       include: path.join(__dirname, 'client'),
+       loaders: ['css']
+     }
+   ]
+ }
 };
+
+module.exports = config;

@@ -10,10 +10,13 @@ const Questionnaire = React.createClass({
     e.preventDefault()
     browserHistory.push('/results')
   },
+  resultLength: function(){
+    return Object.keys(this.props.results).length !== 9
+  },
   render() {
-  	// console.log(">>>PROPS", this.props)
+  	// console.log(">>>PROPS QUESTIONNAIRE", this.props)
     return (
-      <div>
+      <div className="description">Over the last two weeks, how often have you been bothered by any of the following problems?
         {this.props.questionnaire.map((questions, i) => 
         <Questions 
         	{...this.props} 
@@ -24,7 +27,7 @@ const Questionnaire = React.createClass({
         	/>
       )}
         <form onSubmit={this.onSubmit} className="MyForm">
-          <button type="submit">Submit</button>
+          <Button bsSize="large" type="submit" disabled={this.resultLength()}>Submit</Button>
         </form>
       </div>
     )

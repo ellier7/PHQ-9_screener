@@ -1,7 +1,69 @@
-h1 {
-	color: red;
+body{
+	font-family: ProximaSemi, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: white;
 }
 
-.main {
-	margin-left: 10px;
+.main{
+	background-color: #299cd7;
+	margin: 2% 6% 3%;
+	border-radius: 20px;
+}
+
+.title {
+	padding-top: 5%;
+	letter-spacing: 0.1em;
+  font-weight: bolder;
+  color: white;
+  font-size: 45px;
+  line-height: 21px;
+ text-align: center;
+}
+
+
+.warning {
+	padding-top: 1px; 
+	color: lightgrey;
+	font-size: 15px;
+	letter-spacing: 2px;
+	font-weight: lighter;
+	text-align: center;
+}
+
+.description{
+	padding-top: 10px;
+	color: papayawhip;
+	padding-top: 2%; 
+	font-size: 20px;
+	letter-spacing: 2px;
+	font-weight: lighter;
+	text-align: center;
+}
+
+.questions{
+	padding-left: 10px;
+	color: ivory;
+	padding-top: 2%; 
+	font-size: 20px;
+	letter-spacing: 2px;
+	font-weight: lighter;
+	text-align: center;
+}
+
+.wellStyles{
+	margin-left: 0;
+	border: none;
+	/*text-align: center;*/
+	background-color: #a5d9f4;
+}
+
+.buttons{
+	background-color: #a5d9f4;
+	/*max-width: 45%;*/
+	margin: auto;
+	font-weight: lighter;
+}
+
+.MyForm{
+	padding: 4%;
+	color: white;
 }

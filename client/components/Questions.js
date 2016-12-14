@@ -7,8 +7,8 @@ const Questions = React.createClass({
     // {console.log(">>>>>PROPSSSS", this.props)}
     const { questions, i, score} = this.props;
     return (
-      <div style={{marginLeft: '10%'}}>
-          <center><h3>{questions}</h3></center>
+      <div>
+          <h3 className="questions">{questions}</h3>
         <AnswerChoices {...this.props} />
         </div>
     )

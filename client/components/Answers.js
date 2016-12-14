@@ -9,8 +9,8 @@ const Answers = React.createClass({
   render() {
     const { answer, index, questions, i, results, answerID, selectedAnswer} = this.props;
     return (
-       <div>
-    <Button bsSize="large" block
+       <div className="buttons">
+    <Button className="wellStyles" bsSize="large" block
     onClick={this.props.increment.bind(this, questions, i, index, answerID)}>{answer}</Button>
   </div>
     // const score = Object.keys(results).reduce((memo, key) => memo + results[key].value, 0);
