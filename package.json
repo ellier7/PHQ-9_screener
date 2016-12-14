@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/ellier7/PHQ-9_screener.git"
   },
+   "engines": {
+  "node": "5.9.1",
+  "npm": "2.2.1"
+},
   "author": "Ellie Roussopoulos",
   "license": "ISC",
   "dependencies": {

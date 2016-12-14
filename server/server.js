@@ -1,8 +1,8 @@
 var express = require('express');
 var path = require('path');
 var cors = require('cors');
-
 var bodyParser = require('body-parser');
+var port = process.env.PORT || 8000;
 
 var app = express();
 
@@ -26,11 +26,6 @@ app.get('*', function(req, res){
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
-app.listen(8000, 'localhost', function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-
-  console.log('Listening at http://localhost:8000');
+app.listen(port, function(){
+	console.log('Listening on port ' + port);
 });
