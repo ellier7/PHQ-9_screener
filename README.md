@@ -20,6 +20,8 @@ npm install
 npm run build
 npm run start
 open localhost:8000 in your browser
+
+deployed: https://quartetchallenge.herokuapp.com/
 ```
 
 ### My approach
