@@ -4,6 +4,7 @@ import DepressionSeverity from './DepressionSeverity'
 const Submit = React.createClass({
   render() {
     const { results } = this.props
+    // calculate total score by adding values in results object
     const score = Object.values(results).reduce((x,y) => x+y)
     
     return (
