@@ -1,10 +1,11 @@
-import React from 'react';
+import React from 'react'
 import DepressionSeverity from './DepressionSeverity'
 
 const Submit = React.createClass({
   render() {
     const { results } = this.props
     const score = Object.values(results).reduce((x,y) => x+y)
+    
     return (
       <div className="score"><strong>Your scored a {score} out of 27</strong>
       {this.props.depressionSeverity.map((range, i) =>
@@ -21,6 +22,6 @@ const Submit = React.createClass({
         </div>
     )
   }
-});
+})
 
-export default Submit;
+export default Submit
