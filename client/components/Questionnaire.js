@@ -9,6 +9,7 @@ const Questionnaire = React.createClass({
     e.preventDefault()
     browserHistory.push('/results')
   },
+   // button is disabled unless all questions have been answered
   resultLength: function(){
     return Object.keys(this.props.results).length !== 9
   },
