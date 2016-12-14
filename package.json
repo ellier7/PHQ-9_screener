@@ -1,0 +1,54 @@
+{
+  "name": "phq-9_screener",
+  "version": "1.0.0",
+  "description": "PHQ-9 depression screener and assessment score along with its explanation",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "webpack --watch",
+    "dev": "webpack -w",
+    "webpack": "webpack --progress --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellier7/PHQ-9_screener.git"
+  },
+  "author": "Ellie Roussopoulos",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-router": "0.0.1",
+    "express-session": "^1.14.1",
+    "inline-style-prefixer": "^2.0.4",
+    "parse": "^1.9.2",
+    "path": "^0.12.7",
+    "react": "^15.3.2",
+    "react-bootstrap": "^0.30.5",
+    "react-burger-menu": "^1.10.8",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.6",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.7",
+    "react-select": "^1.0.0-rc.2",
+    "redux": "^3.6.0",
+    "request": "^2.75.0",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1"
+  },
+  "bugs": {
+    "url": "https://github.com/ellier7/PHQ-9_screener/issues"
+  },
+  "homepage": "https://github.com/ellier7/PHQ-9_screener#readme"
+}
