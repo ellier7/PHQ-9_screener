@@ -20,9 +20,9 @@ npm install
 npm run build
 npm run start
 open localhost:8000 in your browser
-
-deployed: https://quartetchallenge.herokuapp.com/
 ```
+Deployed: https://quartetchallenge.herokuapp.com/
+
 
 ### My approach
 On the clientside, I used React/Redux to manage the state and Webpack and Babel to transpile and bundle ES2015/JSX code. The answer to each question is presented as a bootstrap button. I built an action creator that is triggered each time a user clicks on a button. Each answer has a different value (0-3). When an answer is clicked on, I store the question index and answer value in an object. To calculate the score when the user submits their answers, I reduce over the Object keys to present a total score. If the score is >= 10, the user is presented with the name and address of three therapists they can select from. Once they select a therapist, a thank you note is displayed. If the user scores below a 10, only the thank you note is displayed.
