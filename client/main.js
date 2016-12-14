@@ -1,18 +1,17 @@
-import React from 'react';
-
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
 
 // Import Components
-import App from './components/App';
-import Questionnaire from './components/Questionnaire';
+import App from './components/App'
+import Questionnaire from './components/Questionnaire'
 import AnswerChoices from './components/AnswerChoices'
 import Submit from './components/Submit'
 import Appointment from './components/Appointment'
 
 // import react router deps
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
-import store, { history } from './store';
+import { Router, Route, IndexRoute } from 'react-router'
+import { Provider } from 'react-redux'
+import store, { history } from './store'
 
 const router = (
   <Provider store={store}>
@@ -26,4 +25,4 @@ const router = (
   </Provider>
 )
 
-render(router, document.getElementById('app'));
+render(router, document.getElementById('app'))
