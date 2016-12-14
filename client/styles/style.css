@@ -52,13 +52,11 @@ body{
 .wellStyles{
 	margin-left: 0;
 	border: none;
-	/*text-align: center;*/
 	background-color: #a5d9f4;
 }
 
 .buttons{
 	background-color: #a5d9f4;
-	/*max-width: 45%;*/
 	margin: auto;
 	font-weight: lighter;
 }

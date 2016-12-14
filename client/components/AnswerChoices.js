@@ -6,17 +6,14 @@ const AnswerList = React.createClass({
     return (
       <div className="photo-grid">
         {this.props.answers.map((answers, i) => (
-        	<Answers 
-        	{...this.props} 
-        	key={i} 
-          index={i}
-        	answer={answers.text} 
-          answerID={answers.id}
-          selectedAnswer={i}
-          >
-          
-          </Answers>
-          ))}
+          <Answers 
+          {...this.props} 
+          key={i} 
+          answerValue={answers.id}
+          answer={answers.text} 
+          />
+          )
+        )}
       </div>
     )
   }

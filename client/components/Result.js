@@ -1,6 +1,4 @@
-import React from 'react';
-import AnswerChoices from './AnswerChoices'
-import Submit from './Submit'
+import React from 'react'
 import Therapist from './Therapist'
 import ThankYou from './ThankYou'
 
@@ -15,17 +13,19 @@ const Result = React.createClass({
         <Therapist 
         key={i}
         names={name.name}
-        address={name.address} />
+        address={name.address} 
+        />
         )}
         </div>
-    )
-  }
-  else{
-    return (
-      <div> <ThankYou /></div>
       )
+  }else{
+    return (
+      <div> 
+        <ThankYou />
+        </div>
+        )
+    }
   }
-}
 })
 
-export default Result;
+export default Result

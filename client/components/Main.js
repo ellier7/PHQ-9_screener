@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from 'react'
 
 const Main = React.createClass({
   render() {
@@ -9,6 +8,6 @@ const Main = React.createClass({
       </div>
     )
   }
-});
+})
 
-export default Main;
+export default Main
