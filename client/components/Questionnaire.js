@@ -31,14 +31,11 @@ const Questionnaire = React.createClass({
         	/>
       )}
         <form onSubmit={this.onSubmit} className="MyForm">
-          <Button bsSize="large" type="submit">Submit</Button>
+          <Button bsSize="large" type="submit" disabled={this.resultLength()}>Submit</Button>
         </form>
       </div>
       </div>
     )
   }
 });
-
-
-//disabled={this.resultLength()}
 export default Questionnaire;

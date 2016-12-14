@@ -23,6 +23,3 @@ const DepressionSeverity = React.createClass({
 });
 
 export default DepressionSeverity;
-
- // {this.props.depressionSeverity.map((range, i) =>
- // {if(score >= range.low && score <= range.high) {
