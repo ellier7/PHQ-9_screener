@@ -13,7 +13,7 @@ As a patient, if I score moderate depression or higher, I would like to be prese
 From within the root directory:
 
 ```sh
-git clone 
+git clone https://github.com/ellier7/PHQ-9_screener.git
 cd PHQ-9_screener
 npm install
 npm run build
