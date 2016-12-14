@@ -3,12 +3,10 @@ import DepressionSeverity from './DepressionSeverity'
 
 const Submit = React.createClass({
   render() {
-    {console.log(">>>>>PROPSSSS", this.props)}
     const { results } = this.props
     const score = Object.values(results).reduce((x,y) => x+y)
     return (
-      <div>
-      <h1>Your scored a {score} out of 27</h1>
+      <div className="score"><strong>Your scored a {score} out of 27</strong>
       {this.props.depressionSeverity.map((range, i) =>
         <DepressionSeverity 
         {...this.props}
@@ -26,5 +24,3 @@ const Submit = React.createClass({
 });
 
 export default Submit;
-
- // {if(score >= range.low && score <= range.high) {

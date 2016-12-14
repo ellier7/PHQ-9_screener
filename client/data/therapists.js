@@ -2,13 +2,13 @@ let therapists =
   [
     { 
     	name: 'Dr. Freud',
-    	address: '118 Austria Street, NY, New York, 10018'
+    	address: '118 Dreams Street, NY, New York, 10018'
    	},
     { name: 'Dr. Pavlov',
-    address: '1991 Russian Ave, NY, New York, 10005'
+    address: '1991 Classical Way, NY, New York, 10005'
 },
     { name: 'Dr. Piaget',
-    address: '118 Switzerland Street, NY, New York, 11221'
+    address: '220 Thoughts Ave, NY, New York, 11221'
    }
  ]
 

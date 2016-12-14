@@ -7,6 +7,7 @@ import App from './components/App';
 import Questionnaire from './components/Questionnaire';
 import AnswerChoices from './components/AnswerChoices'
 import Submit from './components/Submit'
+import Appointment from './components/Appointment'
 
 // import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -19,6 +20,7 @@ const router = (
       <Route path="/" component={App}>
         <IndexRoute component={Questionnaire}></IndexRoute>
          <Route path="/results" component={Submit} />
+          <Route path="/appointment" component={Appointment} />
       </Route>
     </Router>
   </Provider>

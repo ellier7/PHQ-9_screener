@@ -67,3 +67,46 @@ body{
 	padding: 4%;
 	color: white;
 }
+
+.selected{
+	background-color: red;
+}
+
+.score{
+	text-align: center;
+    color: white;
+    background-color: #299cd7;
+    margin: 10% 18% 10%;
+    border-radius: 20px;
+    padding: 5%;
+    font-size: 23px;
+    font-weight: lighter;
+    line-height: 45px;
+    letter-spacing: .1em;
+}
+
+.levels{
+	font-size: 18px;
+	line-height: 37px;
+}
+
+.thanks{
+	font-size: 25px;
+	line-height: 30px;
+	text-align: center;
+    color: white;
+    padding-top: 18px;
+}
+
+.schedule{
+	text-align: center;
+    color: white;
+    background-color: #299cd7;
+    margin: 10% 18% 10%;
+    border-radius: 20px;
+    padding: 5%;
+    font-size: 23px;
+    font-weight: lighter;
+    line-height: 45px;
+    letter-spacing: .1em;
+}

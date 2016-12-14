@@ -3,7 +3,6 @@ import Answers from './Answers'
 
 const AnswerList = React.createClass({
   render() {
-     // console.log("questions", this.props)
     return (
       <div className="photo-grid">
         {this.props.answers.map((answers, i) => (

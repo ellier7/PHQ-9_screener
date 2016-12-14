@@ -1,17 +1,22 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { browserHistory } from 'react-router';
+import Appointment from './Appointment'
 
-const Questions = React.createClass({
+const Therapists = React.createClass({
+	 onSubmit: function(e) {
+    e.preventDefault()
+    browserHistory.push('/appointment')
+  },
   render() {
-    // {console.log(">>>>>PROPSSSS", this.props)}
     const { names, address } = this.props;
     return (
-      <div style={{marginLeft: '10%'}}>
-
-       <Button bsSize="large" block>{ names }<br/>{ address }</Button>
+         <div className="buttons">
+    <Button className="wellStyles" bsSize="large" block
+    onClick={this.onSubmit}>{ names }<br/>{ address }</Button>
   </div>
     )
   }
 });
 
-export default Questions;
+export default Therapists;
