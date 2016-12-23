@@ -6,15 +6,15 @@ let answers =
   },
   {
     "text": 'Several days',
-    "id": 1
+    "id": 1,
   },
   {
     "text": 'More than half the days',
-    "id": 2
+    "id": 2,
   },
   {
     "text": 'Nearly every day',
-    "id": 3
+    "id": 3,
   }
 ]
 

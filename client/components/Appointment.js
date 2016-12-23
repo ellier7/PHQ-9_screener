@@ -1,14 +1,16 @@
-import React from 'react'
+import React, {Component} from 'react'
+import ThankYou from './ThankYou'
 
-const Appointment = React.createClass({
+class Appointment extends React.Component{
+  // console.log("SCOREEE", props)
+  shouldComponentUpdate(){
+    console.log("UPDATEDDDD")
+    return <ThankYou />
+  } 
   render() {
     return (
-         <div className="schedule">
-         	A representative will call you to schedule an appointment. 
-         		<br/> Thank you for taking the survey! 
-         </div>
-         )
-	}
-})
+      <div><ThankYou /></div>)
+  }
+}
 
 export default Appointment
