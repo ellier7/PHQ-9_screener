@@ -1,4 +1,4 @@
-function therapists(state = [], action) {
+const therapists = (state = [], action) => {
   switch (action.type) {
     default:
       return state;
