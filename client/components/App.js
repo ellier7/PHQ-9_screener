@@ -1,22 +1,29 @@
-import { bindActionCreators } from 'redux'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as actionCreators from '../actions/actionCreators'
-import Main from './Main'
 
-function mapStateToProps(state) {
-  return {
-    questionnaire: state.questionnaire,
-    answers: state.answers,
-    results: state.results,
-    depressionSeverity: state.depressionSeverity,
-    therapists: state.therapists
+import Questionnaire from './Questionnaire'
+import Appointment from './Appointment'
+
+class App extends Component {
+  render () {
+    if (this.props.submitTherapist) {
+      return <Appointment />
+    } else {
+      return <Questionnaire />
+    }
   }
 }
 
-function mapDispachToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
+const { bool } = React.PropTypes
+
+App.propTypes = {
+  submitTherapist: bool
 }
 
-const App = connect(mapStateToProps, mapDispachToProps)(Main)
+function mapStateToProps (state) {
+  return {
+    submitTherapist: state.results.submitTherapist
+  }
+}
 
-export default App
+export default connect(mapStateToProps)(App)
