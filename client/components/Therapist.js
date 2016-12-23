@@ -1,21 +1,47 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Button } from 'react-bootstrap'
-import { browserHistory } from 'react-router'
 
-const Therapists = React.createClass({
-  onSubmit: function(e) {
-    e.preventDefault()
-    browserHistory.push('/appointment')
-  },
-  render() {
-    const { names, address } = this.props
-    return (
-      <div className="buttons">
-        <Button className="wellStyles" bsSize="large" block
-        onClick={this.onSubmit}>{ names }<br/>{ address }</Button>
-      </div>
+import { submitTherapists } from '../actions/actionCreators'
+
+class Therapists extends React.Component {
+  render () {
+    const { submitTherapist, submitTherapists, names, address } = this.props
+    if (!submitTherapist) {
+      return (
+        <div className='buttons'>
+          <Button className='wellStyles' bsSize='large' block
+            onClick={submitTherapists}>{ names }<br />{ address }</Button>
+        </div>
       )
+    } else {
+      return (
+        <div />
+      )
+    }
   }
-})
+}
 
-export default Therapists
+const { string, func, bool } = React.PropTypes
+
+Therapists.propTypes = {
+  names: string.isRequired,
+  address: string.isRequired,
+  submitTherapists: func.isRequired,
+  submitTherapist: bool
+}
+
+function mapStateToProps (state) {
+  return {
+    submitTherapist: state.results.submitTherapist
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators({
+    submitTherapists: submitTherapists
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Therapists)
