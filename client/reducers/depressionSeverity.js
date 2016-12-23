@@ -1,4 +1,4 @@
-function depressionSeverity(state = [], action) {
+const depressionSeverity = (state = [], action) => {
   switch (action.type) {
     default:
       return state;
