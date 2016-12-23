@@ -1,9 +1,9 @@
-function answers(state = [], action) {
-  switch(action.type) {
+function answers (state = [], action) {
+  switch (action.type) {
     default:
-      return state;
+      return state
   }
 }
 
-export default answers;
+export default answers
 

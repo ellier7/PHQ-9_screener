@@ -1,8 +1,8 @@
-function questionnaire(state = [], action) {
+function questionnaire (state = [], action) {
   switch (action.type) {
     default:
-      return state;
+      return state
   }
 }
 
-export default questionnaire;
+export default questionnaire

@@ -1,38 +1,30 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
-import { browserHistory } from 'react-router'
-import Appointment from './Appointment'
-import ThankYou from './ThankYou'
-import { submitTherapists } from '../actions/actionCreators'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Button } from 'react-bootstrap'
 
-class Therapists extends React.Component{
-  renderAppointment(){
-    return <Appointment />
-  }
-  renderTherapists() {
+import { submitTherapists } from '../actions/actionCreators'
 
-  }
-  render() {
-    console.log(">>>>SubmitTherapist", this.props.submitTherapist)
-     if(this.props.submitTherapist){
-      return this.renderAppointment()
-    }else{
-    return (
-      <li>
-      {this.props.names}
-      {this.props.address}</li>
+class Therapists extends React.Component {
+  render () {
+    const { submitTherapist, submitTherapists, names, address } = this.props
+    if (!submitTherapist) {
+      return (
+        <div className='buttons'>
+          <Button className='wellStyles' bsSize='large' block
+            onClick={submitTherapists}>{ names }<br />{ address }</Button>
+        </div>
       )
-  }
+    } else {
+      return (
+        <div />
+      )
+    }
   }
 }
-      // <div className="buttons">
-        // <Button className="wellStyles" bsSize="large" block>
 
+const { string, func, bool } = React.PropTypes
 
-const { string , func, bool } = React.PropTypes
-// Prop validation
 Therapists.propTypes = {
   names: string.isRequired,
   address: string.isRequired,
@@ -40,12 +32,11 @@ Therapists.propTypes = {
   submitTherapist: bool
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     submitTherapist: state.results.submitTherapist
   }
 }
-
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({

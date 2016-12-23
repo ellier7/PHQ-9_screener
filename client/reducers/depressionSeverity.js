@@ -1,7 +1,7 @@
-function depressionSeverity(state = [], action) {
+function depressionSeverity (state = [], action) {
   switch (action.type) {
     default:
-      return state;
+      return state
   }
 }
 

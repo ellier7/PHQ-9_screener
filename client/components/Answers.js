@@ -1,41 +1,35 @@
 import React, {Component} from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { ButtonGroup, Button } from 'react-bootstrap'
-import Submit from '../containers/Submit'
-import { increment, nextQuestion } from '../actions/actionCreators'
-import ThankYou from './ThankYou'
+import { Button } from 'react-bootstrap'
 
-class Answers extends Component{
-  onItemClick(event) {
+import { increment } from '../actions/actionCreators'
+
+class Answers extends Component {
+  onItemClick (event) {
     event.currentTarget.style.backgroundColor = 'red'
   }
 
-  incrementScore(questionIndex, answerValue){
+  incrementScore (questionIndex, answerValue) {
     this.props.increment(questionIndex, answerValue)
-    // console.log("INCREMENTSCOREPROPS", this.props)
-    // this.props.nextQuestion(event)
-    // this.onItemClick(event)
   }
 
-  render() {
-    const { answer, questions, questionIndex, answerValue } = this.props
-     // console.log("ANSWERS", this.props)
+  render () {
+    const { answer, questionIndex, answerValue } = this.props
     return (
-     <div className="buttons">
-        <Button className="wellStyles" bsSize="large" block
-        onClick={this.incrementScore.bind(this, this.props.questionIndex, this.props.answerValue)}>{this.props.answer}</Button>
+      <div className='buttons'>
+        <Button className='wellStyles' bsSize='large' block
+          onClick={this.incrementScore.bind(this, questionIndex, answerValue)}>
+          {answer}
+        </Button>
       </div>
-      )
+    )
   }
 }
-//{this.incrementScore.bind(this, questions, questionIndex, answerValue)}
 
+const { number, func } = React.PropTypes
 
-const { string, number, func} = React.PropTypes
-
-Answers.propTypes = { 
-  // answer: strng.isRequired,
+Answers.propTypes = {
   answerValue: number.isRequired,
   increment: func.isRequired
 }
@@ -53,28 +47,4 @@ function mapDispatchToProps (dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Answers)
-
-
-
-
-
-
-// import React from 'react'
-
-// const Answers = (props) => (
-//       <div>
-//       {props.answer}
-//         </div>
-//     )
-
-// const { string } = React.PropTypes
-
-// Answers.propTypes = {
-//   answer: string.isRequired
-// }
-
-// export default Answers
-
-
-
 

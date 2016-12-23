@@ -1,16 +1,12 @@
-import React, {Component} from 'react'
-import ThankYou from './ThankYou'
+import React from 'react'
 
-class Appointment extends React.Component{
-  // console.log("SCOREEE", props)
-  shouldComponentUpdate(){
-    console.log("UPDATEDDDD")
-    return <ThankYou />
-  } 
-  render() {
-    return (
-      <div><ThankYou /></div>)
-  }
+const Appointment = () => {
+  return (
+    <div className='schedule'>
+          A representative will call you to schedule an appointment.
+            <br /> Thank you for taking the survey!
+         </div>
+  )
 }
 
 export default Appointment

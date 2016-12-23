@@ -1,4 +1,3 @@
-var webpack = require('webpack')
 var path = require('path')
 
 var BUILD_DIR = path.resolve(__dirname, 'client/public/')
@@ -15,21 +14,21 @@ var config = {
   debug: true,
   module: {
     loaders: [
-     {
-       test: /\.js$/,
-       loader: 'babel-loader',
-       include: path.join(__dirname, 'client'),
-       query: {
-         presets: ['es2015', 'react']
-       }
-     },
-     {
-       test: /\.css?$/,
-       include: path.join(__dirname, 'client'),
-       loaders: ['css']
-     }
-   ]
- }
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: path.join(__dirname, 'client'),
+        query: {
+          presets: ['es2015', 'react']
+        }
+      },
+      {
+        test: /\.css?$/,
+        include: path.join(__dirname, 'client'),
+        loaders: ['css']
+      }
+    ]
+  }
 }
 
 module.exports = config

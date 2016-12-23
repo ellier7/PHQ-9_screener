@@ -1,7 +1,7 @@
-function therapists(state = [], action) {
+function therapists (state = [], action) {
   switch (action.type) {
     default:
-      return state;
+      return state
   }
 }
 
