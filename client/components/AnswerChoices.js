@@ -1,23 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import Answers from './Answers'
 
-const AnswerList = React.createClass({
-  render() {
-    return (
-      <div className="photo-grid">
-        {this.props.answers.map((answers, i) => (
-          <Answers 
-          {...this.props} 
-          key={i} 
+class AnswerChoices extends Component {
+  displayAnswers () {
+    return this.props.answers.map((answers, i) => {
+      return (
+        <Answers
+          key={i}
           answerValue={answers.id}
-          answer={answers.text} 
+          answer={answers.text}
+          questionIndex={this.props.questionIndex}
           />
-          )
-        )}
+      )
+    })
+  }
+  render () {
+    return (
+      <div>
+        {this.displayAnswers()}
       </div>
     )
   }
-});
 
-export default AnswerList;
+}
+
+const { array } = React.PropTypes
+
+AnswerChoices.propTypes = {
+  answers: array.isRequired
+}
+
+function mapStateToProps (state) {
+  return {
+    answers: state.answers
+  }
+}
+
+export default connect(mapStateToProps)(AnswerChoices)
 
