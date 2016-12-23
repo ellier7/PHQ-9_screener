@@ -1,31 +1,44 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Therapist from './Therapist'
 import ThankYou from './ThankYou'
 
-const Result = React.createClass({
-  render() {
-    const { score, therapists } = this.props
-    if(score >= 10){
-    return (
-      <div className="therapistInfo"> 
+class Result extends Component {
+  render () {
+    const { therapists } = this.props
+    if (this.props.score >= 10) {
+      return (
+        <div className='therapistInfo'>
       Please select one of the following therapists to book an appointment:
-      {therapists.map((name, i) => 
-        <Therapist 
-        key={i}
-        names={name.name}
-        address={name.address} 
+      {therapists.map((name, i) =>
+        <Therapist
+          key={i}
+          names={name.name}
+          address={name.address}
         />
         )}
         </div>
       )
-  }else{
-    return (
-      <div> 
-        <ThankYou />
+    } else {
+      return (
+        <div>
+          <ThankYou />
         </div>
-        )
+      )
     }
   }
-})
+}
 
-export default Result
+const { array } = React.PropTypes
+
+Result.propTypes = {
+  therapists: array.isRequired
+}
+
+function mapStateToProps (state) {
+  return {
+    therapists: state.therapists
+  }
+}
+
+export default connect(mapStateToProps)(Result)
